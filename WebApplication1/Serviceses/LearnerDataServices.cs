@@ -1,4 +1,5 @@
-﻿using WebApplication1.Interfaceses;
+﻿using WebApplication1.Entities;
+using WebApplication1.Interfaceses;
 
 namespace WebApplication1.Serviceses
 {
@@ -10,13 +11,13 @@ namespace WebApplication1.Serviceses
             _learnerDataRepositories = learnerDataRepositories;
         }
 
-        public async Task<List<string>> ILearnerDataService()
+        public async Task<List<Entity>> ILearnerDataService()
         {
             try
             {
 
 
-                List<string> result = await _learnerDataRepositories.IlearnigRepository();
+                List<Entity> result = await _learnerDataRepositories.IlearnigRepository();
                 return result;
             }
             catch (Exception ex)

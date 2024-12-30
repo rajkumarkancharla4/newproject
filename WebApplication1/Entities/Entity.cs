@@ -17,7 +17,7 @@ namespace WebApplication1.Entities
         public string? SessionID { get; set; }
         public string? Status { get; set; }
         public DateTimeOffset? CompletionDate { get; set; }
-        public int? SourceID { get; set; }
+        public string? SourceID { get; set; }
         public string? SourceName { get; set; }
         public DateTimeOffset? SubscribedDateTime { get; set; }
         public string? Payload { get; set; }

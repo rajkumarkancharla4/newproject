@@ -9,5 +9,14 @@ namespace WebApplication1.DbContextdatadetails
         {
         }
         public DbSet<Entity> Learningtables { get; set; }
+        public DbSet<CourseInfoEntity> CourseInfo { get; set; }
+        public DbSet<SkillInfoEntity>skillInfo{ get; set; }
+        public DbSet<WdlcompleteDataEntity> WdlcompleteDatas { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<SkillInfoEntity>()
+                .HasNoKey(); // Marks this entity as keyless.
+        }
+
     }
 }

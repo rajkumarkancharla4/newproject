@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebApplication1.DbContextdatadetails;
+using WebApplication1.Entities;
 using WebApplication1.Interfaceses;
 
 namespace WebApplication1.Repositories
@@ -12,13 +13,21 @@ namespace WebApplication1.Repositories
             _dbconnect = dbconnect;
         }
 
-        public async Task<List<string>> IlearnigRepository()
+        public async Task<List<Entity>> IlearnigRepository()
         {
             try
             {
-                List<string> learningdata = await _dbconnect.Learningtables.Where(x => x.IsProcessed == false && x.Status == "Complete").OrderBy(x => x.SubscriberID).Take(10).Select(x => x.SubscriberID.ToString()) // Assuming SubscriberID is a string or convertible to string
-            .ToListAsync();
+                //List<Entity> learningdata =  await _dbconnect.Learningtables.
+                //                             Where(x => x.IsProcessed == false && x.Status == "Complete").OrderBy(x => x.SubscriberID)
+                //                            .Take(10).Include(x => x.SubscriberID).ToListAsync();
+                List<Entity> learningdata = await _dbconnect.Learningtables
+    .Where(x => x.IsProcessed == false && x.Status == "Complete")
+    .OrderBy(x => x.SubscriberID)
+    .Take(10)
+    .ToListAsync();
+
                 return learningdata;
+
             }
             catch (Exception ex)
             {

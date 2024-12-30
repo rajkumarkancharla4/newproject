@@ -17,6 +17,16 @@ builder.Services.AddDbContext<Dbconnect>(options =>
 
 builder.Services.AddScoped<ILearnerDataRepositories, LearnerDataRepository>();
 builder.Services.AddScoped<IlearningDataService, LearnerDataServices>();
+
+builder.Services.AddScoped<IGetCourserelateddataRepository, GetCourserelatedRepository>();
+builder.Services.AddScoped<IGetCourserelateddataService, GetCourserelatedService>();
+
+builder.Services.AddScoped<IGetCourseInfoRepository, GetCourseInfoRepository>();
+builder.Services.AddScoped<IGetCourseInfoService, GetCourseInfoService>();
+
+builder.Services.AddScoped<IGetSkillInfoService, GetSkillInfoService>();
+builder.Services.AddScoped<IGetSkillInfoRepository, GetSkillInfoRepository>();
+
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
