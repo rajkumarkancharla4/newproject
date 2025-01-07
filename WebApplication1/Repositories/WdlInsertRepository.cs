@@ -13,9 +13,30 @@ namespace WebApplication1.Repositories
         {
             _dbconnect = dbconnect;
         }
-        public Task WdlInserRepo(List<WdlcompleteDataEntity> wdlcompleteDataEntities)
+        public async Task<bool> WdlInserRepo(List<WdlcompleteDataEntity> wdlcompleteDataEntities)
         {
-            throw new NotImplementedException();
+            try
+            {
+              
+
+                  await _dbconnect.WdlcomputedData.AddRangeAsync(wdlcompleteDataEntities);
+                    var result = await _dbconnect.SaveChangesAsync();
+                    if (result>0)
+                    {
+                        return true;
+
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+              
+            
+            catch(Exception ex)
+            {
+                throw;
+            }
         }
     }
 }

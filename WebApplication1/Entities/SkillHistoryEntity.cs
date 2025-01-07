@@ -3,10 +3,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication1.Entities
 {
-    [Table("WDLComputedData")]
-    public class WdlcompleteDataEntity
+    [Table("SkillHistory")]
+    public class SkillHistoryEntity
     {
-        [Key]  // Indicates that ID is the primary key
+        // Indicates that ID is the primary key
+        [Key]
         public long ID { get; set; }
 
         public string? EmployeeID { get; set; }
@@ -28,8 +29,6 @@ namespace WebApplication1.Entities
         public DateTimeOffset? CreatedDateTime { get; set; }
 
         public DateTimeOffset? ProcessedDateTime { get; set; }
-
-        public bool? IsProcessed { get; set; }
 
     }
 }

@@ -4,6 +4,6 @@ namespace WebApplication1.Interfaceses
 {
     public interface IInsertWdlComputedDataRepository
     {
-        public Task WdlInserRepo(List<WdlcompleteDataEntity> wdlcompleteDataEntities);
+        public Task<bool> WdlInserRepo(List<WdlcompleteDataEntity> wdlcompleteDataEntities);
     }
 }

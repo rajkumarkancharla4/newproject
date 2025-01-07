@@ -11,9 +11,19 @@ namespace WebApplication1.Serviceses
         {
             _repository=insertWdlComputedDataRepository;
         }
-        public Task wdlinsert(List<WdlcompleteDataEntity> wdlcompleteDataEntities)
+        public async Task<bool> wdlinsert(List<WdlcompleteDataEntity> wdlcompleteDataEntities)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var result = await _repository.WdlInserRepo(wdlcompleteDataEntities);
+
+                return result;
+
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
         }
     }
 }

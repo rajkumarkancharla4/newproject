@@ -11,7 +11,9 @@ namespace WebApplication1.DbContextdatadetails
         public DbSet<Entity> Learningtables { get; set; }
         public DbSet<CourseInfoEntity> CourseInfo { get; set; }
         public DbSet<SkillInfoEntity>skillInfo{ get; set; }
-        public DbSet<WdlcompleteDataEntity> WdlcompleteDatas { get; set; }
+        public DbSet<WdlcompleteDataEntity> WdlcomputedData { get; set; }
+        public DbSet<SkillHistoryEntity> SkillHistory { get; set; }
+      
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<SkillInfoEntity>()

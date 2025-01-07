@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using WebApplication1.DbContextdatadetails;
 using WebApplication1.Interfaceses;
 using WebApplication1.Repositories;
@@ -26,6 +27,18 @@ builder.Services.AddScoped<IGetCourseInfoService, GetCourseInfoService>();
 
 builder.Services.AddScoped<IGetSkillInfoService, GetSkillInfoService>();
 builder.Services.AddScoped<IGetSkillInfoRepository, GetSkillInfoRepository>();
+builder.Services.AddScoped<IInsertWdlComputedDataRepository, WdlInsertRepository>();
+builder.Services.AddScoped<IInsertWdlComputedDataservice, WdlInsertdataService>();
+builder.Services.AddScoped<IWdldataprocessingService, WdlDataProcessService>();
+builder.Services.AddScoped<IGetWdlCompletionRepository, GetWdlComputation_Repository >();
+builder.Services.AddScoped<IGetWdlCompletionService, GetWdlComputedService>();
+builder.Services.AddScoped<IUpdateWdlComputationRepository, UpdateComputationRepository>();
+builder.Services.AddScoped<IUpdateWdlComputationService, UpdateWdlComputationService>();
+//builder.Services.AddScoped<IInsertSkillHistroryRepository,InsertSkillHistoryRepository>();
+//builder.Services.AddScoped<IInsertSkillhistoryService, InsertSkillHistroryService>();
+builder.Services.AddScoped<IInsertSkillhistoryService, InsertSkillHistroryService>();
+builder.Services.AddScoped<IInsertSkillHistroryRepository, InsertSkillHistoryRepository >();
+builder.Services.AddHttpClient();
 
 builder.Services.AddSwaggerGen();
 

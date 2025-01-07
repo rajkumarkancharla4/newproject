@@ -16,7 +16,7 @@ namespace WebApplication1.Repositories
         {
             try
             {
-                List<SkillInfoEntity> skillInfoEntities = await _dbconnect.skillInfo.Where(x => learnercourseId.Contains(x.SourceID)).ToListAsync();
+                List<SkillInfoEntity> skillInfoEntities = await _dbconnect.skillInfo.Where(x => learnercourseId.Contains(x.ref_SourceID)).ToListAsync();
                 return skillInfoEntities;
             }catch(Exception ex)
             {
