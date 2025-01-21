@@ -5,15 +5,15 @@ namespace WebApplication1.Serviceses
 {
     public class InsertSkillHistroryService : IInsertSkillhistoryService
     {
-        private readonly IInsertSkillhistoryService _insertSkillhistoryService;
-        public InsertSkillHistroryService(IInsertSkillhistoryService insertSkillhistoryService)
+        private readonly IInsertSkillHistroryRepository _inserSkilldataRepository;
+        public InsertSkillHistroryService(IInsertSkillHistroryRepository inserSkilldataRepository)
         {
-            _insertSkillhistoryService=insertSkillhistoryService;
+            _inserSkilldataRepository= inserSkilldataRepository;
             
         }
         public async  Task<bool> insSkillHistory(List<WdlcompleteDataEntity> wdlcompleteDataEntities)
         {
-            var res= await  _insertSkillhistoryService.insSkillHistory(wdlcompleteDataEntities);
+            var res= await  _inserSkilldataRepository.InSkillhistoryasync(wdlcompleteDataEntities);
             return res;
         }
     }

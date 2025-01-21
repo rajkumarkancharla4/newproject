@@ -4,6 +4,6 @@ namespace WebApplication1.Interfaceses
 {
     public interface IInsertSkillHistroryRepository
     {
-        public Task<bool> InSkillhistoryasync(List<WdlcompleteDataEntity> skillHistoryEntities);
+        public Task<bool> InSkillhistoryasync(List<WdlcompleteDataEntity>  wdlcompleteDataEntities);
     }
 }

@@ -17,7 +17,7 @@ namespace WebApplication1.Repositories
         {
             try
             {
-                List<SkillHistoryEntity> skillhistory = new List<SkillHistoryEntity>();
+                List<SkillHistoryEntity> skillhistorydata = new List<SkillHistoryEntity>();
 
                 foreach (var skill in skillHistoryEntities)
                 {
@@ -32,7 +32,7 @@ namespace WebApplication1.Repositories
                     data.CourseID = skill.CourseID;
                     data.CreatedDateTime = skill.CreatedDateTime;
                     data.ProcessedDateTime = skill.ProcessedDateTime;
-                    skillhistory.Add(data);
+                    skillhistorydata.Add(data);
                     var res = await _dbconnect.SkillHistory.AnyAsync(x => x.CourseID == data.CourseID
                    && x.EmployeeID == data.EmployeeID
                    && x.SkillID == data.SkillID

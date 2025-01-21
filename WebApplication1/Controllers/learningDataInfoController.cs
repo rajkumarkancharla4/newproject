@@ -99,20 +99,20 @@ namespace WebApplication1.Controllers
 
                         var res = new WdlcompleteDataEntity
                         {
-                            //CourseID = item.CourseID,
+                            CourseID = item.CourseID,
                             EmployeeID = item.LearnerID,
                             SkillID = skillbyid.SkillID,
                             SourceSystem = item.SourceName,
                             CourseName = filteredCourses.CourseName,
-              
+                            UsagePercentage = "75",
                             //CreatedDateTime = DateTimeOffset.UtcNow,
 
                             EndDate = DateTimeOffset.UtcNow,
                             IsProcessed = false,
                             ProcessedDateTime = null,
-                           
+
                             //StartDate = item.CompletionDate.AddMonths(credit),
-                            StartDate = item.CompletionDate?.AddMonths(credit) ,
+                            StartDate = item.CompletionDate?.AddMonths(credit),
 
                         };
                         wdlcompleteDataEntities.Add(res);
